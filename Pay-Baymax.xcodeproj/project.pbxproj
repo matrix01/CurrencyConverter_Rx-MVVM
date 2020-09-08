@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8CA2A80D2507D79C00FDAEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2A80C2507D79C00FDAEBB /* AppDelegate.swift */; };
+		8CA2A80F2507D79C00FDAEBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2A80E2507D79C00FDAEBB /* SceneDelegate.swift */; };
+		8CA2A8112507D79C00FDAEBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2A8102507D79C00FDAEBB /* ViewController.swift */; };
+		8CA2A8142507D79C00FDAEBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CA2A8122507D79C00FDAEBB /* Main.storyboard */; };
+		8CA2A8162507D79E00FDAEBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CA2A8152507D79E00FDAEBB /* Assets.xcassets */; };
+		8CA2A8192507D79E00FDAEBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CA2A8172507D79E00FDAEBB /* LaunchScreen.storyboard */; };
+		8CA2A8242507D79F00FDAEBB /* Pay_BaymaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2A8232507D79F00FDAEBB /* Pay_BaymaxTests.swift */; };
+		AC265F4A068CFEEC82259866 /* Pods_Pay_BaymaxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19CD43E947CFCACFCBD8C16 /* Pods_Pay_BaymaxTests.framework */; };
+		D2204182CB795314C1F5B586 /* Pods_Pay_Baymax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6739A989D24B8987F80C39E5 /* Pods_Pay_Baymax.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CA2A8202507D79F00FDAEBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CA2A8012507D79B00FDAEBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CA2A8082507D79C00FDAEBB;
+			remoteInfo = "Pay-Baymax";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		133E1184EF4693F1CC37607A /* Pods-Pay-Baymax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pay-Baymax.release.xcconfig"; path = "Target Support Files/Pods-Pay-Baymax/Pods-Pay-Baymax.release.xcconfig"; sourceTree = "<group>"; };
+		49E329474B1CC799F24D275B /* Pods-Pay-Baymax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pay-Baymax.debug.xcconfig"; path = "Target Support Files/Pods-Pay-Baymax/Pods-Pay-Baymax.debug.xcconfig"; sourceTree = "<group>"; };
+		6739A989D24B8987F80C39E5 /* Pods_Pay_Baymax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pay_Baymax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CA2A8092507D79C00FDAEBB /* Pay-Baymax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pay-Baymax.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CA2A80C2507D79C00FDAEBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8CA2A80E2507D79C00FDAEBB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8CA2A8102507D79C00FDAEBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8CA2A8132507D79C00FDAEBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8CA2A8152507D79E00FDAEBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8CA2A8182507D79E00FDAEBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8CA2A81A2507D79E00FDAEBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CA2A81F2507D79F00FDAEBB /* Pay-BaymaxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pay-BaymaxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CA2A8232507D79F00FDAEBB /* Pay_BaymaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pay_BaymaxTests.swift; sourceTree = "<group>"; };
+		8CA2A8252507D79F00FDAEBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C0F90FCA4F1C4A0434AE679 /* Pods-Pay-BaymaxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pay-BaymaxTests.release.xcconfig"; path = "Target Support Files/Pods-Pay-BaymaxTests/Pods-Pay-BaymaxTests.release.xcconfig"; sourceTree = "<group>"; };
+		A049D6AAD6E49ED0D68F855E /* Pods-Pay-BaymaxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pay-BaymaxTests.debug.xcconfig"; path = "Target Support Files/Pods-Pay-BaymaxTests/Pods-Pay-BaymaxTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C19CD43E947CFCACFCBD8C16 /* Pods_Pay_BaymaxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pay_BaymaxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CA2A8062507D79C00FDAEBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2204182CB795314C1F5B586 /* Pods_Pay_Baymax.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CA2A81C2507D79E00FDAEBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC265F4A068CFEEC82259866 /* Pods_Pay_BaymaxTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45843E540CB69B4CD29F9749 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6739A989D24B8987F80C39E5 /* Pods_Pay_Baymax.framework */,
+				C19CD43E947CFCACFCBD8C16 /* Pods_Pay_BaymaxTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CA2A8002507D79B00FDAEBB = {
+			isa = PBXGroup;
+			children = (
+				8CA2A80B2507D79C00FDAEBB /* Pay-Baymax */,
+				8CA2A8222507D79F00FDAEBB /* Pay-BaymaxTests */,
+				8CA2A80A2507D79C00FDAEBB /* Products */,
+				D0F79C9283EE28FF87BF4278 /* Pods */,
+				45843E540CB69B4CD29F9749 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8CA2A80A2507D79C00FDAEBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CA2A8092507D79C00FDAEBB /* Pay-Baymax.app */,
+				8CA2A81F2507D79F00FDAEBB /* Pay-BaymaxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CA2A80B2507D79C00FDAEBB /* Pay-Baymax */ = {
+			isa = PBXGroup;
+			children = (
+				8CA2A80C2507D79C00FDAEBB /* AppDelegate.swift */,
+				8CA2A80E2507D79C00FDAEBB /* SceneDelegate.swift */,
+				8CA2A8102507D79C00FDAEBB /* ViewController.swift */,
+				8CA2A8122507D79C00FDAEBB /* Main.storyboard */,
+				8CA2A8152507D79E00FDAEBB /* Assets.xcassets */,
+				8CA2A8172507D79E00FDAEBB /* LaunchScreen.storyboard */,
+				8CA2A81A2507D79E00FDAEBB /* Info.plist */,
+			);
+			path = "Pay-Baymax";
+			sourceTree = "<group>";
+		};
+		8CA2A8222507D79F00FDAEBB /* Pay-BaymaxTests */ = {
+			isa = PBXGroup;
+			children = (
+				8CA2A8232507D79F00FDAEBB /* Pay_BaymaxTests.swift */,
+				8CA2A8252507D79F00FDAEBB /* Info.plist */,
+			);
+			path = "Pay-BaymaxTests";
+			sourceTree = "<group>";
+		};
+		D0F79C9283EE28FF87BF4278 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49E329474B1CC799F24D275B /* Pods-Pay-Baymax.debug.xcconfig */,
+				133E1184EF4693F1CC37607A /* Pods-Pay-Baymax.release.xcconfig */,
+				A049D6AAD6E49ED0D68F855E /* Pods-Pay-BaymaxTests.debug.xcconfig */,
+				9C0F90FCA4F1C4A0434AE679 /* Pods-Pay-BaymaxTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CA2A8082507D79C00FDAEBB /* Pay-Baymax */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CA2A8282507D79F00FDAEBB /* Build configuration list for PBXNativeTarget "Pay-Baymax" */;
+			buildPhases = (
+				5C90FFB26DB974821585B3AB /* [CP] Check Pods Manifest.lock */,
+				8CA2A8052507D79C00FDAEBB /* Sources */,
+				8CA2A8062507D79C00FDAEBB /* Frameworks */,
+				8CA2A8072507D79C00FDAEBB /* Resources */,
+				36FFAF5D8267DFAB65D3E786 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pay-Baymax";
+			productName = "Pay-Baymax";
+			productReference = 8CA2A8092507D79C00FDAEBB /* Pay-Baymax.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8CA2A81E2507D79E00FDAEBB /* Pay-BaymaxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CA2A82B2507D79F00FDAEBB /* Build configuration list for PBXNativeTarget "Pay-BaymaxTests" */;
+			buildPhases = (
+				DE18899F9A6DF20728E36DF8 /* [CP] Check Pods Manifest.lock */,
+				8CA2A81B2507D79E00FDAEBB /* Sources */,
+				8CA2A81C2507D79E00FDAEBB /* Frameworks */,
+				8CA2A81D2507D79E00FDAEBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CA2A8212507D79F00FDAEBB /* PBXTargetDependency */,
+			);
+			name = "Pay-BaymaxTests";
+			productName = "Pay-BaymaxTests";
+			productReference = 8CA2A81F2507D79F00FDAEBB /* Pay-BaymaxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CA2A8012507D79B00FDAEBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = milan;
+				TargetAttributes = {
+					8CA2A8082507D79C00FDAEBB = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					8CA2A81E2507D79E00FDAEBB = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 8CA2A8082507D79C00FDAEBB;
+					};
+				};
+			};
+			buildConfigurationList = 8CA2A8042507D79B00FDAEBB /* Build configuration list for PBXProject "Pay-Baymax" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8CA2A8002507D79B00FDAEBB;
+			productRefGroup = 8CA2A80A2507D79C00FDAEBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CA2A8082507D79C00FDAEBB /* Pay-Baymax */,
+				8CA2A81E2507D79E00FDAEBB /* Pay-BaymaxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8CA2A8072507D79C00FDAEBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CA2A8192507D79E00FDAEBB /* LaunchScreen.storyboard in Resources */,
+				8CA2A8162507D79E00FDAEBB /* Assets.xcassets in Resources */,
+				8CA2A8142507D79C00FDAEBB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CA2A81D2507D79E00FDAEBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36FFAF5D8267DFAB65D3E786 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pay-Baymax/Pods-Pay-Baymax-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pay-Baymax/Pods-Pay-Baymax-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pay-Baymax/Pods-Pay-Baymax-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C90FFB26DB974821585B3AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pay-Baymax-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE18899F9A6DF20728E36DF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pay-BaymaxTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CA2A8052507D79C00FDAEBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CA2A8112507D79C00FDAEBB /* ViewController.swift in Sources */,
+				8CA2A80D2507D79C00FDAEBB /* AppDelegate.swift in Sources */,
+				8CA2A80F2507D79C00FDAEBB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CA2A81B2507D79E00FDAEBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CA2A8242507D79F00FDAEBB /* Pay_BaymaxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8CA2A8212507D79F00FDAEBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CA2A8082507D79C00FDAEBB /* Pay-Baymax */;
+			targetProxy = 8CA2A8202507D79F00FDAEBB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8CA2A8122507D79C00FDAEBB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CA2A8132507D79C00FDAEBB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8CA2A8172507D79E00FDAEBB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CA2A8182507D79E00FDAEBB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8CA2A8262507D79F00FDAEBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8CA2A8272507D79F00FDAEBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8CA2A8292507D79F00FDAEBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49E329474B1CC799F24D275B /* Pods-Pay-Baymax.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZW6M86YW35;
+				INFOPLIST_FILE = "Pay-Baymax/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.milan.Pay-Baymax";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8CA2A82A2507D79F00FDAEBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 133E1184EF4693F1CC37607A /* Pods-Pay-Baymax.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZW6M86YW35;
+				INFOPLIST_FILE = "Pay-Baymax/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.milan.Pay-Baymax";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8CA2A82C2507D79F00FDAEBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A049D6AAD6E49ED0D68F855E /* Pods-Pay-BaymaxTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZW6M86YW35;
+				INFOPLIST_FILE = "Pay-BaymaxTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.milan.Pay-BaymaxTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pay-Baymax.app/Pay-Baymax";
+			};
+			name = Debug;
+		};
+		8CA2A82D2507D79F00FDAEBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C0F90FCA4F1C4A0434AE679 /* Pods-Pay-BaymaxTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZW6M86YW35;
+				INFOPLIST_FILE = "Pay-BaymaxTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.milan.Pay-BaymaxTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pay-Baymax.app/Pay-Baymax";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8CA2A8042507D79B00FDAEBB /* Build configuration list for PBXProject "Pay-Baymax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CA2A8262507D79F00FDAEBB /* Debug */,
+				8CA2A8272507D79F00FDAEBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CA2A8282507D79F00FDAEBB /* Build configuration list for PBXNativeTarget "Pay-Baymax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CA2A8292507D79F00FDAEBB /* Debug */,
+				8CA2A82A2507D79F00FDAEBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CA2A82B2507D79F00FDAEBB /* Build configuration list for PBXNativeTarget "Pay-BaymaxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CA2A82C2507D79F00FDAEBB /* Debug */,
+				8CA2A82D2507D79F00FDAEBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8CA2A8012507D79B00FDAEBB /* Project object */;
+}

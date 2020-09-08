@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,10 @@
 		8CA2A8162507D79E00FDAEBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CA2A8152507D79E00FDAEBB /* Assets.xcassets */; };
 		8CA2A8192507D79E00FDAEBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CA2A8172507D79E00FDAEBB /* LaunchScreen.storyboard */; };
 		8CA2A8242507D79F00FDAEBB /* Pay_BaymaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2A8232507D79F00FDAEBB /* Pay_BaymaxTests.swift */; };
+		8CD3C0FA2507DC4000B0650B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CD3C0F92507DC3F00B0650B /* Default-568h@2x.png */; };
+		8CD3C0FC2507DC5F00B0650B /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C0FB2507DC5F00B0650B /* ViewModelType.swift */; };
+		8CD3C0FF2507DC9C00B0650B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C0FE2507DC9C00B0650B /* NetworkManager.swift */; };
+		8CD3C1012507DE1800B0650B /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1002507DE1800B0650B /* Application.swift */; };
 		AC265F4A068CFEEC82259866 /* Pods_Pay_BaymaxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19CD43E947CFCACFCBD8C16 /* Pods_Pay_BaymaxTests.framework */; };
 		D2204182CB795314C1F5B586 /* Pods_Pay_Baymax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6739A989D24B8987F80C39E5 /* Pods_Pay_Baymax.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +47,10 @@
 		8CA2A81F2507D79F00FDAEBB /* Pay-BaymaxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pay-BaymaxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA2A8232507D79F00FDAEBB /* Pay_BaymaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pay_BaymaxTests.swift; sourceTree = "<group>"; };
 		8CA2A8252507D79F00FDAEBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CD3C0F92507DC3F00B0650B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8CD3C0FB2507DC5F00B0650B /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		8CD3C0FE2507DC9C00B0650B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8CD3C1002507DE1800B0650B /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		9C0F90FCA4F1C4A0434AE679 /* Pods-Pay-BaymaxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pay-BaymaxTests.release.xcconfig"; path = "Target Support Files/Pods-Pay-BaymaxTests/Pods-Pay-BaymaxTests.release.xcconfig"; sourceTree = "<group>"; };
 		A049D6AAD6E49ED0D68F855E /* Pods-Pay-BaymaxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pay-BaymaxTests.debug.xcconfig"; path = "Target Support Files/Pods-Pay-BaymaxTests/Pods-Pay-BaymaxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C19CD43E947CFCACFCBD8C16 /* Pods_Pay_BaymaxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pay_BaymaxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +88,7 @@
 		8CA2A8002507D79B00FDAEBB = {
 			isa = PBXGroup;
 			children = (
+				8CD3C0F92507DC3F00B0650B /* Default-568h@2x.png */,
 				8CA2A80B2507D79C00FDAEBB /* Pay-Baymax */,
 				8CA2A8222507D79F00FDAEBB /* Pay-BaymaxTests */,
 				8CA2A80A2507D79C00FDAEBB /* Products */,
@@ -100,13 +109,10 @@
 		8CA2A80B2507D79C00FDAEBB /* Pay-Baymax */ = {
 			isa = PBXGroup;
 			children = (
-				8CA2A80C2507D79C00FDAEBB /* AppDelegate.swift */,
-				8CA2A80E2507D79C00FDAEBB /* SceneDelegate.swift */,
-				8CA2A8102507D79C00FDAEBB /* ViewController.swift */,
-				8CA2A8122507D79C00FDAEBB /* Main.storyboard */,
-				8CA2A8152507D79E00FDAEBB /* Assets.xcassets */,
-				8CA2A8172507D79E00FDAEBB /* LaunchScreen.storyboard */,
-				8CA2A81A2507D79E00FDAEBB /* Info.plist */,
+				8CD3C0FD2507DC8C00B0650B /* Services */,
+				8CD3C0F82507DC0800B0650B /* Resources */,
+				8CD3C0F72507DBF900B0650B /* Application */,
+				8CD3C0F62507DBE900B0650B /* Common */,
 			);
 			path = "Pay-Baymax";
 			sourceTree = "<group>";
@@ -120,6 +126,44 @@
 			path = "Pay-BaymaxTests";
 			sourceTree = "<group>";
 		};
+		8CD3C0F62507DBE900B0650B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8CA2A8102507D79C00FDAEBB /* ViewController.swift */,
+				8CD3C0FB2507DC5F00B0650B /* ViewModelType.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8CD3C0F72507DBF900B0650B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8CA2A80C2507D79C00FDAEBB /* AppDelegate.swift */,
+				8CA2A80E2507D79C00FDAEBB /* SceneDelegate.swift */,
+				8CD3C1002507DE1800B0650B /* Application.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8CD3C0F82507DC0800B0650B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8CA2A8122507D79C00FDAEBB /* Main.storyboard */,
+				8CA2A8152507D79E00FDAEBB /* Assets.xcassets */,
+				8CA2A8172507D79E00FDAEBB /* LaunchScreen.storyboard */,
+				8CA2A81A2507D79E00FDAEBB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8CD3C0FD2507DC8C00B0650B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8CD3C0FE2507DC9C00B0650B /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		D0F79C9283EE28FF87BF4278 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,7 +172,6 @@
 				A049D6AAD6E49ED0D68F855E /* Pods-Pay-BaymaxTests.debug.xcconfig */,
 				9C0F90FCA4F1C4A0434AE679 /* Pods-Pay-BaymaxTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -217,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CA2A8192507D79E00FDAEBB /* LaunchScreen.storyboard in Resources */,
+				8CD3C0FA2507DC4000B0650B /* Default-568h@2x.png in Resources */,
 				8CA2A8162507D79E00FDAEBB /* Assets.xcassets in Resources */,
 				8CA2A8142507D79C00FDAEBB /* Main.storyboard in Resources */,
 			);
@@ -300,7 +344,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD3C1012507DE1800B0650B /* Application.swift in Sources */,
+				8CD3C0FC2507DC5F00B0650B /* ViewModelType.swift in Sources */,
 				8CA2A8112507D79C00FDAEBB /* ViewController.swift in Sources */,
+				8CD3C0FF2507DC9C00B0650B /* NetworkManager.swift in Sources */,
 				8CA2A80D2507D79C00FDAEBB /* AppDelegate.swift in Sources */,
 				8CA2A80F2507D79C00FDAEBB /* SceneDelegate.swift in Sources */,
 			);
@@ -465,7 +512,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZW6M86YW35;
-				INFOPLIST_FILE = "Pay-Baymax/Info.plist";
+				INFOPLIST_FILE = "Pay-Baymax/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -485,7 +532,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZW6M86YW35;
-				INFOPLIST_FILE = "Pay-Baymax/Info.plist";
+				INFOPLIST_FILE = "Pay-Baymax/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

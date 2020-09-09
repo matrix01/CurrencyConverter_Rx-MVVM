@@ -20,7 +20,7 @@ class CurrencyInfoCell: UITableViewCell {
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var conversionLabel: UILabel!
 
-    fileprivate var model: CurrencyInfoModel?
+    fileprivate var model: Rate?
     let multiplier = BehaviorRelay<String>(value: "0.0")
     
     override func awakeFromNib() {
@@ -28,23 +28,23 @@ class CurrencyInfoCell: UITableViewCell {
         // Initialization code
     }
 
-    func bindModel(rate: CurrencyInfoModel) {
-        sourceLabel.text = "Source: \(rate.source)"
-        targetLabel.text = "Target: \(rate.target)"
-        rateLabel.text = "Rate: \(rate.rate)"
-
-        model = rate
+    func bindModel(rate: Rate) {
+        sourceLabel.text = "Source: \(rate.source ?? "")"
+        targetLabel.text = "Target: \(rate.target ?? "")"
+        rateLabel.text = "Rate: \(rate.value)"
 
         multiplier.asDriver()
             .drive(rx.setTotal)
             .disposed(by: rx.disposeBag)
+
+        model = rate
     }
 }
 
 fileprivate extension Reactive where Base: CurrencyInfoCell {
     var setTotal: Binder<String> {
         Binder(self.base) {base, input in
-            if let value: Double = Double(input), let rate = base.model?.rate {
+            if let value: Double = Double(input), let rate = base.model?.value {
                 let total = rate * value
                 base.conversionLabel.text = "Result:\n" + total.removeZero
             }else {
@@ -60,28 +60,5 @@ extension Double {
         nf.minimumFractionDigits = 0
         nf.maximumFractionDigits = 5
         return nf.string(from: NSNumber(value: self))!
-    }
-}
-
-struct CurrencyInfoModel {
-    let source: String
-    let target: String
-    let rate: Double
-    let conversion: Double
-}
-
-extension CurrencyInfoModel: Equatable {
-    public static func == (lhs: CurrencyInfoModel, rhs: CurrencyInfoModel) -> Bool {
-        return lhs.source == rhs.source &&
-            lhs.target == rhs.target &&
-            lhs.rate == rhs.rate &&
-            lhs.conversion == rhs.conversion
-    }
-}
-
-extension CurrencyInfoModel: IdentifiableType {
-    typealias Identity = String
-    var identity: String {
-        return String(target)
     }
 }

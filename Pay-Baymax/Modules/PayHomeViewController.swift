@@ -62,7 +62,7 @@ extension PayHomeViewController: UITableViewDelegate {
 }
 
 struct CurrencySectionModel {
-    var items: [CurrencyInfoModel]
+    var items: [Rate]
 }
 
 extension CurrencySectionModel: AnimatableSectionModelType, IdentifiableType {
@@ -72,7 +72,7 @@ extension CurrencySectionModel: AnimatableSectionModelType, IdentifiableType {
         return "CurrencySectionModel"
     }
 
-    init(original: CurrencySectionModel, items: [CurrencyInfoModel]) {
+    init(original: CurrencySectionModel, items: [Rate]) {
         self = original
         self.items = items
     }

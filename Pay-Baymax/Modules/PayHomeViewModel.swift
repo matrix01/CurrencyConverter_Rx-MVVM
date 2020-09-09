@@ -42,17 +42,10 @@ class PayHomeViewModel: ViewModel, ViewModelType {
         let rmRates = realm.objects(RMRateList.self)
 
         Observable.arrayWithChangeset(from: rmRates)
-            .subscribe(onNext: {[weak self] array, _ in
-                guard let this = self else { return }
-                guard let first = array.first?.asDomain() else {return}
-                let conversion = first.quotes.map { rate -> CurrencyInfoModel in
-                    return CurrencyInfoModel(source: rate.source ?? "",
-                                             target: rate.target ?? "",
-                                             rate: rate.value,
-                                             conversion: this.currentInput * rate.value)
-                }
-                let sectioned = CurrencySectionModel(items: conversion.sorted(by: { (first, second) -> Bool in
-                    first.target < second.target
+            .subscribe(onNext: {array, _ in
+                guard let rates = array.first?.asDomain().quotes else {return}
+                let sectioned = CurrencySectionModel(items: rates.sorted(by: { (first, second) -> Bool in
+                    (first.target ?? "") < (second.target ?? "")
                 }))
                 elements.accept([sectioned])
             }).disposed(by: rx.disposeBag)

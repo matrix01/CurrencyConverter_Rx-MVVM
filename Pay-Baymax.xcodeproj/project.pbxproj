@@ -29,6 +29,8 @@
 		8CD3C1182507EBEE00B0650B /* Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1172507EBEE00B0650B /* Ext.swift */; };
 		8CD3C11A2508668800B0650B /* RMCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1192508668800B0650B /* RMCurrency.swift */; };
 		8CD3C11C2508693100B0650B /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C11B2508693100B0650B /* Convertible.swift */; };
+		8CD3C11E25087EB500B0650B /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C11D25087EB500B0650B /* AppUtil.swift */; };
+		8CD3C120250884A900B0650B /* Rates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C11F250884A900B0650B /* Rates.swift */; };
 		AC265F4A068CFEEC82259866 /* Pods_Pay_BaymaxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19CD43E947CFCACFCBD8C16 /* Pods_Pay_BaymaxTests.framework */; };
 		D2204182CB795314C1F5B586 /* Pods_Pay_Baymax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6739A989D24B8987F80C39E5 /* Pods_Pay_Baymax.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +75,8 @@
 		8CD3C1172507EBEE00B0650B /* Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext.swift; sourceTree = "<group>"; };
 		8CD3C1192508668800B0650B /* RMCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCurrency.swift; sourceTree = "<group>"; };
 		8CD3C11B2508693100B0650B /* Convertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convertible.swift; sourceTree = "<group>"; };
+		8CD3C11D25087EB500B0650B /* AppUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtil.swift; sourceTree = "<group>"; };
+		8CD3C11F250884A900B0650B /* Rates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rates.swift; sourceTree = "<group>"; };
 		9C0F90FCA4F1C4A0434AE679 /* Pods-Pay-BaymaxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pay-BaymaxTests.release.xcconfig"; path = "Target Support Files/Pods-Pay-BaymaxTests/Pods-Pay-BaymaxTests.release.xcconfig"; sourceTree = "<group>"; };
 		A049D6AAD6E49ED0D68F855E /* Pods-Pay-BaymaxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pay-BaymaxTests.debug.xcconfig"; path = "Target Support Files/Pods-Pay-BaymaxTests/Pods-Pay-BaymaxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C19CD43E947CFCACFCBD8C16 /* Pods_Pay_BaymaxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pay_BaymaxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +171,7 @@
 				8CA2A80C2507D79C00FDAEBB /* AppDelegate.swift */,
 				8CD3C1002507DE1800B0650B /* Application.swift */,
 				8CD3C1092507E02C00B0650B /* Navigator.swift */,
+				8CD3C11D25087EB500B0650B /* AppUtil.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 				8CD3C1102507E70000B0650B /* DeviceModel.swift */,
 				8CD3C1122507E76600B0650B /* Currency.swift */,
 				8CD3C1192508668800B0650B /* RMCurrency.swift */,
+				8CD3C11F250884A900B0650B /* Rates.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -409,11 +415,13 @@
 				8CD3C0FC2507DC5F00B0650B /* ViewModelType.swift in Sources */,
 				8CA2A8112507D79C00FDAEBB /* ViewController.swift in Sources */,
 				8CD3C0FF2507DC9C00B0650B /* NetworkManager.swift in Sources */,
+				8CD3C11E25087EB500B0650B /* AppUtil.swift in Sources */,
 				8CA2A80D2507D79C00FDAEBB /* AppDelegate.swift in Sources */,
 				8CD3C11A2508668800B0650B /* RMCurrency.swift in Sources */,
 				8CD3C11C2508693100B0650B /* Convertible.swift in Sources */,
 				8CD3C10C2507E13100B0650B /* NavigationController.swift in Sources */,
 				8CD3C1112507E70000B0650B /* DeviceModel.swift in Sources */,
+				8CD3C120250884A900B0650B /* Rates.swift in Sources */,
 				8CD3C1072507DF7800B0650B /* PayHomeViewController.swift in Sources */,
 				8CD3C1152507EA1200B0650B /* RequestProtocol.swift in Sources */,
 				8CD3C10E2507E44500B0650B /* ApiClient.swift in Sources */,

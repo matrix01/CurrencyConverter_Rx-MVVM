@@ -10,6 +10,9 @@ target 'Pay-Baymax' do
   pod 'RxDataSources', '~> 4.0'  # https://github.com/RxSwiftCommunity/RxDataSources
   pod 'NSObject+Rx', '~> 5.0'  # https://github.com/RxSwiftCommunity/NSObject-Rx
   pod 'RxGesture', '~> 3.0'  # https://github.com/RxSwiftCommunity/RxGesture
+  
+  #Database
+  pod 'RxRealm', '~> 1.0.0'
   pod 'RealmSwift', '~> 3.15'
   pod 'Realm', '~> 3.15'
 

@@ -11,6 +11,7 @@ import UIKit
 
 enum ApiRequest {
     case list(parameters: list_get_params)
+    case live(parameters: live_get_params)
 
     private var fullURL: String {
         return ApiServer.defaultApiUrl.appending(endPoint).removingPercentEncoding!
@@ -21,10 +22,13 @@ enum ApiRequest {
         switch self {
         case .list(let params):
             reequestURL.queryItems = [URLQueryItem(name: "access_key", value: params.access_key)]
+        case .live(let params):
+            reequestURL.queryItems = [URLQueryItem(name: "access_key", value: params.access_key),
+                                      URLQueryItem(name: "source", value: params.source)]
         }
 
         guard let finalUrl = reequestURL.url else {
-            fatalError("Unable to instantiate Realm")
+            fatalError("Unable to instantiate request uel")
         }
         return finalUrl
     }
@@ -32,6 +36,7 @@ enum ApiRequest {
     var endPoint: String {
         switch self {
         case .list: return "/list"
+        case .live: return "/live"
         }
     }
 
@@ -62,4 +67,11 @@ enum ApiRequest {
 
 struct list_get_params: Codable {
     let access_key: String
+}
+
+struct live_get_params: Codable {
+    let access_key: String
+
+    // for which country to get conversion
+    let source: String
 }

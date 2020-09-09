@@ -12,8 +12,10 @@ final class Application: NSObject {
     static let shared = Application()
     var window: UIWindow?
     var provider: NetworkManager?
+    let navigator: Navigator
 
     override private init() {
+        navigator = Navigator.default
         super.init()
         updateProvider()
     }
@@ -28,7 +30,7 @@ final class Application: NSObject {
             return
         }
 
-        //let viewModel = ClassboardViewModel(provider: provider)
-        //self.navigator.show(segue: .classboard(viewModel: viewModel), sender: nil, transition: .root(in: window))
+        let viewModel = PayHomeViewModel(provider: provider)
+        self.navigator.show(segue: .home(viewModel: viewModel), sender: nil, transition: .root(in: window))
     }
 }

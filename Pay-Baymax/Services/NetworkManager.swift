@@ -12,10 +12,11 @@ import RxSwift
 class NetworkManager {
     func request<Result>(urlRequest: URLRequest,
                          type: Result.Type,
-                         decoder: JSONDecoder = JSONDecoder()) -> Observable<Result> where Result: Decodable {
+                         decoder: JSONDecoder = JSONDecoder()) -> Observable<Result> where Result: Codable {
         return Observable.create { obs in
             URLSession.shared.rx.response(request: urlRequest).subscribe(
                 onNext: { response in
+                    print(response.data)
                     let response = Response(data: response.data)
                     guard let decoded = response.decode(Result.self) else {
                         obs.onError(NSError(domain: "Failed to parse data!", code: 404, userInfo: nil))
@@ -45,7 +46,7 @@ struct PError: Decodable {
 
 
 extension Response {
-    public func decode<T: Decodable>(_ type: T.Type) -> T? {
+    public func decode<T: Codable>(_ type: T.Type) -> T? {
         let jsonDecoder = JSONDecoder()
         do {
             let response = try jsonDecoder.decode(T.self, from: data)

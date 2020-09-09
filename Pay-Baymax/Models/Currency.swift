@@ -32,7 +32,7 @@ struct CurrencyList: Codable {
 
 extension CurrencyList: RealmRepresentable {
     var uid: String {
-        return "#keyPath(id)"
+        return String(0)
     }
 
     func asRealm() -> RMCurrencyList {
@@ -77,7 +77,7 @@ struct Currrency: Codable {
 
 extension Currrency: RealmRepresentable {
     var uid: String {
-        return "currency"
+        return currencyCode ?? ""
     }
 
     func asRealm() -> some RMCurrrency {

@@ -10,13 +10,14 @@ import Foundation
 import RealmSwift
 
 class RMCurrencyList: Object {
+    @objc dynamic var id = 0
     @objc dynamic var success: Bool = false
     @objc dynamic var terms: String?
     @objc dynamic var privacy: String?
     var currencies = List<RMCurrrency>()
 
     override class func primaryKey() -> String? {
-        return "#keyPath(id)"
+        return #keyPath(id)
     }
 }
 
@@ -34,7 +35,7 @@ class RMCurrrency: Object {
     @objc dynamic var currencyCode: String?
 
     override class func primaryKey() -> String? {
-        return "currency"
+        return #keyPath(currencyCode)
     }
 }
 

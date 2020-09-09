@@ -20,10 +20,10 @@ class PayHomeViewModel: ViewModel, ViewModelType {
     }
 
     struct Output {
+        let rateItems: Driver<[CurrencySectionModel]>
     }
 
-    fileprivate var currencies = BehaviorRelay<CurrencyList?>(value: nil)
-    fileprivate var rateList = BehaviorRelay<RateList?>(value: nil)
+    var currentInput: Double = 1.0
 
     override init(provider: NetworkManager) {
         super.init(provider: provider)
@@ -38,34 +38,26 @@ class PayHomeViewModel: ViewModel, ViewModelType {
             .bind(to: rx.loadList)
             .disposed(by: rx.disposeBag)
 
-        currencies.asObservable()
-            .filterNil()
-            .map{$0.asRealm()}
-            .bind(to: rx.saveRealm)
-            .disposed(by: rx.disposeBag)
-
-        rateList.asObservable()
-            .filterNil()
-            .map{$0.asRealm()}
-            .bind(to: rx.saveRealm)
-            .disposed(by: rx.disposeBag)
-
-
-        let rmCurrencies = realm.objects(RMCurrencyList.self)
-
-        Observable.arrayWithChangeset(from: rmCurrencies)
-            .subscribe(onNext: { array, _ in
-                print(array)
-            }).disposed(by: rx.disposeBag)
-
+        let elements = BehaviorRelay<[CurrencySectionModel]>(value: [])
         let rmRates = realm.objects(RMRateList.self)
 
         Observable.arrayWithChangeset(from: rmRates)
-            .subscribe(onNext: { array, _ in
-                print(array)
+            .subscribe(onNext: {[weak self] array, _ in
+                guard let this = self else { return }
+                guard let first = array.first?.asDomain() else {return}
+                let conversion = first.quotes.map { rate -> CurrencyInfoModel in
+                    return CurrencyInfoModel(source: rate.source ?? "",
+                                             target: rate.target ?? "",
+                                             rate: rate.value,
+                                             conversion: this.currentInput * rate.value)
+                }
+                let sectioned = CurrencySectionModel(items: conversion.sorted(by: { (first, second) -> Bool in
+                    first.target < second.target
+                }))
+                elements.accept([sectioned])
             }).disposed(by: rx.disposeBag)
 
-        return Output()
+        return Output(rateItems: elements.asDriver())
     }
 }
 
@@ -78,12 +70,6 @@ fileprivate extension Reactive where Base: PayHomeViewModel {
             base.loadRatesForCountry()
         }
     }
-
-    var saveRealm: Binder<Object> {
-        Binder(self.base) {_, currList in
-            currList.save()
-        }
-    }
 }
 
 fileprivate extension PayHomeViewModel {
@@ -92,9 +78,8 @@ fileprivate extension PayHomeViewModel {
         let listRequest = ApiRequest.list(parameters: listParams)
 
         provider.request(urlRequest: listRequest.request, type: CurrencyList.self)
-            .subscribe(onNext: {[weak self] list in
-                guard let this = self else { return }
-                this.currencies.accept(list)
+            .subscribe(onNext: {list in
+                list.asRealm().save()
             }, onError: {[weak self] error in
                 guard let this = self else { return }
                 this.errorTracker.accept(error)
@@ -107,9 +92,8 @@ fileprivate extension PayHomeViewModel {
         let liveRequest = ApiRequest.live(parameters: liveParams)
 
         provider.request(urlRequest: liveRequest.request, type: RateList.self)
-            .subscribe(onNext: {[weak self] list in
-                guard let this = self else { return }
-                this.rateList.accept(list)
+            .subscribe(onNext: {list in
+                list.asRealm().save()
             }, onError: {[weak self] error in
                 guard let this = self else { return }
                 this.errorTracker.accept(error)

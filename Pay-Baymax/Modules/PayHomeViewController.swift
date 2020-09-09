@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import RxDataSources
 
-class PayHomeViewController: ViewController {
+class PayHomeViewController: ViewController, UIScrollViewDelegate {
 
     @IBOutlet private weak var textInput: UITextField!
     @IBOutlet private weak var sourceButton: UIButton!
@@ -28,9 +30,23 @@ class PayHomeViewController: ViewController {
         let willAppear = rx.viewWillAppear.mapToVoid().asDriverOnErrorJustComplete()
 
         let input = PayHomeViewModel.Input(trigger: willAppear)
-        _ = viewModel.transform(input: input)
+        let output = viewModel.transform(input: input)
 
-        
+        let dataSource = RxTableViewSectionedAnimatedDataSource<CurrencySectionModel>(
+            configureCell: {[weak self] _, tableview, _, item in
+                let cell = tableview.dequeueReusableCell(withIdentifier: CurrencyInfoCell.reuseIdentifier)
+                guard let currencyCell = cell as? CurrencyInfoCell else { return cell! }
+                guard let this = self else { return cell!}
+                currencyCell.bindModel(rate: item)
+                _ = this.textInput.rx.textInput <-> currencyCell.multiplier
+                return currencyCell
+        })
+
+        output.rateItems
+            .drive(tableView.rx.items(dataSource: dataSource))
+            .disposed(by: rx.disposeBag)
+
+        tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
     }
 
     func setupViews() {
@@ -39,8 +55,14 @@ class PayHomeViewController: ViewController {
     }
 }
 
+extension PayHomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+}
+
 struct CurrencySectionModel {
-    var items: [Rate]
+    var items: [CurrencyInfoModel]
 }
 
 extension CurrencySectionModel: AnimatableSectionModelType, IdentifiableType {
@@ -50,7 +72,7 @@ extension CurrencySectionModel: AnimatableSectionModelType, IdentifiableType {
         return "CurrencySectionModel"
     }
 
-    init(original: CurrencySectionModel, items: [Rate]) {
+    init(original: CurrencySectionModel, items: [CurrencyInfoModel]) {
         self = original
         self.items = items
     }

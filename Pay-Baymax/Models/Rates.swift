@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import RxDataSources
 
 //RateList
 
@@ -44,6 +45,10 @@ class RMRateList: Object {
     @objc dynamic var terms: String?
     @objc dynamic var success: Bool = false
     var quotes = List<RMRate>()
+
+    override class func primaryKey() -> String? {
+        return #keyPath(id)
+    }
 }
 
 extension RateList: RealmRepresentable {
@@ -85,6 +90,21 @@ struct Rate: Codable {
         self.source = source
         self.target = target
         self.value = value
+    }
+}
+
+extension Rate: Equatable {
+    public static func == (lhs: Rate, rhs: Rate) -> Bool {
+        return lhs.source == rhs.source &&
+        lhs.target == rhs.target &&
+        lhs.value == rhs.value
+    }
+}
+
+extension Rate: IdentifiableType {
+    typealias Identity = String
+    var identity: String {
+        return String(target ?? "")
     }
 }
 

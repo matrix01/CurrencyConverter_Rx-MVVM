@@ -1,23 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Test View Controller-->
+        <!--Pay Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="PayHomeViewController" id="BYZ-38-t0r" customClass="PayHomeViewController" customModule="CurrencyConverter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PayHomeViewController" id="BYZ-38-t0r" customClass="PayHomeViewController" customModule="Pay_Baymax" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V2h-X0-EAy">
+                                <rect key="frame" x="20" y="81" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="KNX-22-hzh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kl-Cv-YsH">
+                                <rect key="frame" x="334" y="145" width="60" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="XGS-pL-uRP"/>
+                                    <constraint firstAttribute="height" constant="40" id="c9G-JD-k0A"/>
+                                </constraints>
+                                <state key="normal" title="USD"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QUO-RC-feg">
+                                <rect key="frame" x="0.0" y="205" width="414" height="691"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3kl-Cv-YsH" firstAttribute="top" secondItem="V2h-X0-EAy" secondAttribute="bottom" constant="20" id="Az6-Ni-61F"/>
+                            <constraint firstAttribute="bottom" secondItem="QUO-RC-feg" secondAttribute="bottom" id="Coj-j7-Ghn"/>
+                            <constraint firstItem="QUO-RC-feg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PHD-gS-olX"/>
+                            <constraint firstItem="QUO-RC-feg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SwR-0Y-WCU"/>
+                            <constraint firstItem="QUO-RC-feg" firstAttribute="top" secondItem="3kl-Cv-YsH" secondAttribute="bottom" constant="20" id="VOr-CB-LoD"/>
+                            <constraint firstItem="V2h-X0-EAy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="37" id="YbA-8n-juT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V2h-X0-EAy" secondAttribute="trailing" constant="20" id="bSV-UJ-EY5"/>
+                            <constraint firstItem="V2h-X0-EAy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cVW-1j-7jh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3kl-Cv-YsH" secondAttribute="trailing" constant="20" id="hGz-Gh-ig8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="sourceButton" destination="3kl-Cv-YsH" id="mvU-k4-IqG"/>
+                        <outlet property="tableView" destination="QUO-RC-feg" id="Wzb-Y2-6KK"/>
+                        <outlet property="textInput" destination="V2h-X0-EAy" id="OpU-Sw-8tW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

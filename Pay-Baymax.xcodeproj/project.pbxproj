@@ -31,6 +31,8 @@
 		8CD3C11C2508693100B0650B /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C11B2508693100B0650B /* Convertible.swift */; };
 		8CD3C11E25087EB500B0650B /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C11D25087EB500B0650B /* AppUtil.swift */; };
 		8CD3C120250884A900B0650B /* Rates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C11F250884A900B0650B /* Rates.swift */; };
+		8CD3C1242508B7F600B0650B /* CurrencyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1222508B7F600B0650B /* CurrencyInfoCell.swift */; };
+		8CD3C1252508B7F600B0650B /* CurrencyInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD3C1232508B7F600B0650B /* CurrencyInfoCell.xib */; };
 		AC265F4A068CFEEC82259866 /* Pods_Pay_BaymaxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19CD43E947CFCACFCBD8C16 /* Pods_Pay_BaymaxTests.framework */; };
 		D2204182CB795314C1F5B586 /* Pods_Pay_Baymax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6739A989D24B8987F80C39E5 /* Pods_Pay_Baymax.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +79,8 @@
 		8CD3C11B2508693100B0650B /* Convertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convertible.swift; sourceTree = "<group>"; };
 		8CD3C11D25087EB500B0650B /* AppUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtil.swift; sourceTree = "<group>"; };
 		8CD3C11F250884A900B0650B /* Rates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rates.swift; sourceTree = "<group>"; };
+		8CD3C1222508B7F600B0650B /* CurrencyInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyInfoCell.swift; sourceTree = "<group>"; };
+		8CD3C1232508B7F600B0650B /* CurrencyInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyInfoCell.xib; sourceTree = "<group>"; };
 		9C0F90FCA4F1C4A0434AE679 /* Pods-Pay-BaymaxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pay-BaymaxTests.release.xcconfig"; path = "Target Support Files/Pods-Pay-BaymaxTests/Pods-Pay-BaymaxTests.release.xcconfig"; sourceTree = "<group>"; };
 		A049D6AAD6E49ED0D68F855E /* Pods-Pay-BaymaxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pay-BaymaxTests.debug.xcconfig"; path = "Target Support Files/Pods-Pay-BaymaxTests/Pods-Pay-BaymaxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C19CD43E947CFCACFCBD8C16 /* Pods_Pay_BaymaxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pay_BaymaxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +204,7 @@
 		8CD3C1022507DF4800B0650B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8CD3C1212508B77000B0650B /* Subviews */,
 				8CD3C1032507DF7800B0650B /* PayHome.storyboard */,
 				8CD3C1042507DF7800B0650B /* PayHomeViewController.swift */,
 				8CD3C1052507DF7800B0650B /* PayHomeViewModel.swift */,
@@ -225,6 +230,15 @@
 				8CD3C11B2508693100B0650B /* Convertible.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		8CD3C1212508B77000B0650B /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				8CD3C1222508B7F600B0650B /* CurrencyInfoCell.swift */,
+				8CD3C1232508B7F600B0650B /* CurrencyInfoCell.xib */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		D0F79C9283EE28FF87BF4278 /* Pods */ = {
@@ -322,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD3C1252508B7F600B0650B /* CurrencyInfoCell.xib in Resources */,
 				8CA2A8192507D79E00FDAEBB /* LaunchScreen.storyboard in Resources */,
 				8CD3C0FA2507DC4000B0650B /* Default-568h@2x.png in Resources */,
 				8CD3C1062507DF7800B0650B /* PayHome.storyboard in Resources */,
@@ -412,6 +427,7 @@
 				8CD3C1082507DF7800B0650B /* PayHomeViewModel.swift in Sources */,
 				8CD3C1012507DE1800B0650B /* Application.swift in Sources */,
 				8CD3C10A2507E02C00B0650B /* Navigator.swift in Sources */,
+				8CD3C1242508B7F600B0650B /* CurrencyInfoCell.swift in Sources */,
 				8CD3C0FC2507DC5F00B0650B /* ViewModelType.swift in Sources */,
 				8CA2A8112507D79C00FDAEBB /* ViewController.swift in Sources */,
 				8CD3C0FF2507DC9C00B0650B /* NetworkManager.swift in Sources */,

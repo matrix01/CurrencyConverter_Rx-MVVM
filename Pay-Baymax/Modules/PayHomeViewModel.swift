@@ -38,7 +38,15 @@ class PayHomeViewModel: ViewModel, ViewModelType {
             .bind(to: rx.loadList)
             .disposed(by: rx.disposeBag)
 
-        currencies
+        currencies.asObservable()
+            .filterNil()
+            .map{$0.asRealm()}
+            .bind(to: rx.saveRealm)
+            .disposed(by: rx.disposeBag)
+
+        rateList.asObservable()
+            .filterNil()
+            .map{$0.asRealm()}
             .bind(to: rx.saveRealm)
             .disposed(by: rx.disposeBag)
 
@@ -46,6 +54,13 @@ class PayHomeViewModel: ViewModel, ViewModelType {
         let rmCurrencies = realm.objects(RMCurrencyList.self)
 
         Observable.arrayWithChangeset(from: rmCurrencies)
+            .subscribe(onNext: { array, _ in
+                print(array)
+            }).disposed(by: rx.disposeBag)
+
+        let rmRates = realm.objects(RMRateList.self)
+
+        Observable.arrayWithChangeset(from: rmRates)
             .subscribe(onNext: { array, _ in
                 print(array)
             }).disposed(by: rx.disposeBag)
@@ -64,27 +79,9 @@ fileprivate extension Reactive where Base: PayHomeViewModel {
         }
     }
 
-    var saveRealm: Binder<CurrencyList?> {
-        Binder(self.base) {base, currList in
-            base.saveRealmObject(currencyList: currList)
-        }
-    }
-}
-
-fileprivate extension PayHomeViewModel {
-    func saveRealmObject(currencyList: CurrencyList?){
-        guard let rmCurrency = currencyList?.asRealm() else { return }
-        do {
-            let realm = try Realm()
-            try realm.write {
-                realm.delete(realm.objects(RMCurrencyList.self))
-                realm.add(rmCurrency, update: .all)
-            }
-            print("Saved realm data")
-            // last update time
-            AppUtil.lastUpdate = Date()
-        } catch {
-            print("Failed to save realm handover data")
+    var saveRealm: Binder<Object> {
+        Binder(self.base) {_, currList in
+            currList.save()
         }
     }
 }
@@ -113,7 +110,6 @@ fileprivate extension PayHomeViewModel {
             .subscribe(onNext: {[weak self] list in
                 guard let this = self else { return }
                 this.rateList.accept(list)
-                print(list)
             }, onError: {[weak self] error in
                 guard let this = self else { return }
                 this.errorTracker.accept(error)

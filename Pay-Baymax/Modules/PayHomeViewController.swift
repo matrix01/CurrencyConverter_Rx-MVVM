@@ -10,16 +10,20 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import RxGesture
 
 class PayHomeViewController: ViewController, UIScrollViewDelegate {
 
     @IBOutlet private weak var textInput: UITextField!
     @IBOutlet private weak var sourceButton: UIButton!
     @IBOutlet private weak var tableView: UITableView!
-
+    @IBOutlet fileprivate weak var pickerView: UIPickerView!
+    @IBOutlet fileprivate weak var doneButton: UIButton!
+    @IBOutlet private weak var sourceView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .white
 
         setupViews()
         bindViewModel()
@@ -37,8 +41,11 @@ class PayHomeViewController: ViewController, UIScrollViewDelegate {
                 let cell = tableview.dequeueReusableCell(withIdentifier: CurrencyInfoCell.reuseIdentifier)
                 guard let currencyCell = cell as? CurrencyInfoCell else { return cell! }
                 guard let this = self else { return cell!}
+
                 currencyCell.bindModel(rate: item)
-                _ = this.textInput.rx.textInput <-> currencyCell.multiplier
+                this.textInput.rx.text.orEmpty
+                    .bind(to: currencyCell.multiplier)
+                    .disposed(by: currencyCell.rx.disposeBag)
                 return currencyCell
         })
 
@@ -46,12 +53,52 @@ class PayHomeViewController: ViewController, UIScrollViewDelegate {
             .drive(tableView.rx.items(dataSource: dataSource))
             .disposed(by: rx.disposeBag)
 
+        output.countryItems
+            .asObservable()
+            .bind(to: pickerView.rx.itemTitles) { (row, element) in
+                return ((element.currencyCode ?? "") + "-" + (element.countryName ?? ""))
+        }
+        .disposed(by: rx.disposeBag)
+
+        pickerView.rx.itemSelected.subscribe(onNext: {row, component in
+            print(component, row)
+        }).disposed(by: rx.disposeBag)
+
         tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
     }
 
     func setupViews() {
         tableView.register(UINib(nibName: "CurrencyInfoCell", bundle: nil),
                            forCellReuseIdentifier: CurrencyInfoCell.reuseIdentifier)
+
+        pickerView.isHidden = true
+        doneButton.isHidden = true
+
+        sourceView.rx.tapGesture()
+            .skip(1)
+            .mapToVoid()
+            .bind(to: rx.showPicker)
+            .disposed(by: rx.disposeBag)
+
+        doneButton.rx.tap
+            .bind(to: rx.donePicker)
+            .disposed(by: rx.disposeBag)
+    }
+}
+
+fileprivate extension Reactive where Base: PayHomeViewController {
+    var showPicker: Binder<Void> {
+        Binder(self.base){base, _ in
+            base.pickerView.isHidden = false
+            base.doneButton.isHidden = false
+        }
+    }
+
+    var donePicker: Binder<Void> {
+        Binder(self.base){base, _ in
+            base.pickerView.isHidden = true
+            base.doneButton.isHidden = true
+        }
     }
 }
 
@@ -61,6 +108,7 @@ extension PayHomeViewController: UITableViewDelegate {
     }
 }
 
+//RxDataSourceModel
 struct CurrencySectionModel {
     var items: [Rate]
 }

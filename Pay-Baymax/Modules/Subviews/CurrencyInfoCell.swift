@@ -39,6 +39,11 @@ class CurrencyInfoCell: UITableViewCell {
 
         model = rate
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        conversionLabel.text = "Result:\n 0.0"
+    }
 }
 
 fileprivate extension Reactive where Base: CurrencyInfoCell {
@@ -46,7 +51,8 @@ fileprivate extension Reactive where Base: CurrencyInfoCell {
         Binder(self.base) {base, input in
             if let value: Double = Double(input), let rate = base.model?.value {
                 let total = rate * value
-                base.conversionLabel.text = "Result:\n" + total.removeZero
+                let totalString = total.removeZero
+                base.conversionLabel.text = "Result:\n" + (totalString == "0" ? "0.0" : totalString)
             }else {
                 base.conversionLabel.text = "Result:\n 0.0"
             }

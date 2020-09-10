@@ -21,6 +21,7 @@ class PayHomeViewModel: ViewModel, ViewModelType {
 
     struct Output {
         let rateItems: Driver<[CurrencySectionModel]>
+        let countryItems: Driver<[Currrency]>
     }
 
     var currentInput: Double = 1.0
@@ -44,13 +45,28 @@ class PayHomeViewModel: ViewModel, ViewModelType {
         Observable.arrayWithChangeset(from: rmRates)
             .subscribe(onNext: {array, _ in
                 guard let rates = array.first?.asDomain().quotes else {return}
-                let sectioned = CurrencySectionModel(items: rates.sorted(by: { (first, second) -> Bool in
+                let newRates = rates.map { (rate) -> Rate in
+                    let rmObject = realm.object(ofType: RMCurrrency.self, forPrimaryKey: rate.target)
+                    let rmObject1 = realm.object(ofType: RMCurrrency.self, forPrimaryKey: rate.source)
+                    return Rate(source: rmObject1?.countryName, target: rmObject?.countryName, value: rate.value)
+                }
+                let sectioned = CurrencySectionModel(items: newRates.sorted(by: { (first, second) -> Bool in
                     (first.target ?? "") < (second.target ?? "")
                 }))
                 elements.accept([sectioned])
             }).disposed(by: rx.disposeBag)
 
-        return Output(rateItems: elements.asDriver())
+        let countryList = BehaviorRelay<[Currrency]>(value: [])
+        let rmCurrencies = realm.objects(RMCurrencyList.self)
+
+        Observable.arrayWithChangeset(from: rmCurrencies)
+            .subscribe(onNext: {array, _ in
+                guard let countries = array.first?.asDomain().currencies else {return}
+                countryList.accept(countries)
+            }).disposed(by: rx.disposeBag)
+
+        return Output(rateItems: elements.asDriver(),
+                      countryItems: countryList.asDriver())
     }
 }
 

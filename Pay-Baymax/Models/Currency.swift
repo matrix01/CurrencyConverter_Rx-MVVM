@@ -13,7 +13,7 @@ struct CurrencyList: Codable {
     let success: Bool?
     let terms: String?
     let privacy: String?
-    let currencies: [Currrency]?
+    var currencies: [Currrency]?
 
     enum CodingKeys: String, CodingKey {
         case success

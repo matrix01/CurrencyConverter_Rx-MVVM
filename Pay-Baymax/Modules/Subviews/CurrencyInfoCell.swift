@@ -22,6 +22,7 @@ class CurrencyInfoCell: UITableViewCell {
 
     fileprivate var model: Rate?
     let multiplier = BehaviorRelay<String>(value: "0.0")
+    private(set) var disposeBag = DisposeBag()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,18 +32,18 @@ class CurrencyInfoCell: UITableViewCell {
     func bindModel(rate: Rate) {
         sourceLabel.text = "Source: \(rate.source ?? "")"
         targetLabel.text = "Target: \(rate.target ?? "")"
-        rateLabel.text = "Rate: \(rate.value)"
+        rateLabel.text = "Rate: " + rate.value.removeZero
 
-        multiplier.asDriver()
-            .drive(rx.setTotal)
-            .disposed(by: rx.disposeBag)
+        multiplier
+            .bind(to: rx.setTotal)
+            .disposed(by: disposeBag)
 
         model = rate
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        conversionLabel.text = "Result:\n 0.0"
+        disposeBag = DisposeBag()
     }
 }
 

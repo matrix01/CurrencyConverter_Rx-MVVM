@@ -1,0 +1,12 @@
+{
+    "success": true,
+    "terms": "https://currencylayer.com/terms",
+    "privacy": "https://currencylayer.com/privacy",
+    "timestamp": 1599755946,
+    "source": "JPY",
+    "quotes": {
+        "JPYAED": 0.7228,
+        "JPYBDT": 0.79861,
+        "JPYUSD": 0.00942
+    }
+}

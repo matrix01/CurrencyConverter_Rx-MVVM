@@ -7,9 +7,12 @@
 //
 
 import XCTest
+import RealmSwift
 @testable import Pay_Baymax
 
 class Pay_BaymaxTests: XCTestCase {
+
+    let provider = NetworkManager()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -29,6 +32,75 @@ class Pay_BaymaxTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+
+    func testLocalData() {
+        //test local data call
+        let sources = ["USD", "BDT", "JPY"]
+        for source in sources {
+            let liveParams = live_get_params(access_key: ApiServer.access_key, source: source)
+            let liveRequest = ApiRequest.live(parameters: liveParams)
+            let errorMessage = "The operation couldn’t be completed. (Failed to parse data! error 404.)"
+
+            let expectation = XCTestExpectation(description: "Waiting for the API call to return")
+
+            provider.requestLocal(urlRequest: liveRequest.request, type: RateList.self)
+                .subscribe(onNext: {list in
+                    defer { expectation.fulfill() }
+                    let rmList = list.asRealm() // cast to realm success
+                    XCTAssert(!rmList.quotes.isEmpty, "Successfully fetched data and converted to Realm object")
+                }, onError: { error in
+                    defer { expectation.fulfill() }
+                    // Error fields are the same as the ones we set above
+                    XCTAssertEqual(error.localizedDescription, errorMessage)
+                }).disposed(by: rx.disposeBag)
+
+            wait(for: [expectation], timeout: 2.0)
+        }
+    }
+
+    func test_network_success_Data() {
+        //test network api call
+        let liveParams = live_get_params(access_key: ApiServer.access_key, source: "USD")
+        let liveRequest = ApiRequest.live(parameters: liveParams)
+        let errorMessage = "The operation couldn’t be completed. (Failed to parse data! error 404.)"
+
+        let expectation = XCTestExpectation(description: "Waiting for the API call to return")
+
+        provider.request(urlRequest: liveRequest.request, type: RateList.self)
+            .subscribe(onNext: {list in
+                defer { expectation.fulfill() }
+                let rmList = list.asRealm() // cast to realm success
+                XCTAssert(!rmList.quotes.isEmpty, "Successfully fetched data and converted to Realm object")
+            }, onError: { error in
+                defer { expectation.fulfill() }
+                // Error fields are the same as the ones we set above
+                XCTAssertEqual(error.localizedDescription, errorMessage)
+            }).disposed(by: rx.disposeBag)
+
+        wait(for: [expectation], timeout: 2.0)
+    }
+
+    func test_network_fail_Data() {
+        //test network api call
+        let liveParams = live_get_params(access_key: ApiServer.access_key, source: "BDT")
+        let liveRequest = ApiRequest.live(parameters: liveParams)
+        let errorMessage = "The operation couldn’t be completed. (Failed to parse data! error 404.)"
+
+        let expectation = XCTestExpectation(description: "Waiting for the API call to return")
+
+        provider.request(urlRequest: liveRequest.request, type: RateList.self)
+            .subscribe(onNext: {list in
+                defer { expectation.fulfill() }
+                let rmList = list.asRealm() // cast to realm success
+                XCTAssert(!rmList.quotes.isEmpty, "Successfully fetched data and converted to Realm object")
+            }, onError: { error in
+                defer { expectation.fulfill() }
+                // Error fields are the same as the ones we set above
+                XCTAssertTrue(errorMessage == error.localizedDescription, errorMessage)
+            }).disposed(by: rx.disposeBag)
+
+        wait(for: [expectation], timeout: 2.0)
     }
 
 }

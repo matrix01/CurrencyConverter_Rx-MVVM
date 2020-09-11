@@ -1,0 +1,12 @@
+{
+    "success": true,
+    "terms": "https://currencylayer.com/terms",
+    "privacy": "https://currencylayer.com/privacy",
+    "timestamp": 1599755946,
+    "source": "BDT",
+    "quotes": {
+        "BDTAED": 0.90507,
+        "BDTUSD": 0.01179,
+        "BDTJPY": 1.25217
+    }
+}

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C21BEBD250A6EF000C978B4 /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C21BEBC250A6EF000C978B4 /* UIViewController+Ex.swift */; };
+		8C21BEBF250B081500C978B4 /* usd.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C21BEBE250B081500C978B4 /* usd.json */; };
+		8C21BEC1250B084300C978B4 /* bdt.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C21BEC0250B084300C978B4 /* bdt.json */; };
+		8C21BEC3250B085300C978B4 /* jpy.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C21BEC2250B085300C978B4 /* jpy.json */; };
 		8CA2A80D2507D79C00FDAEBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2A80C2507D79C00FDAEBB /* AppDelegate.swift */; };
 		8CA2A8112507D79C00FDAEBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2A8102507D79C00FDAEBB /* ViewController.swift */; };
 		8CA2A8142507D79C00FDAEBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CA2A8122507D79C00FDAEBB /* Main.storyboard */; };
@@ -51,6 +55,10 @@
 		133E1184EF4693F1CC37607A /* Pods-Pay-Baymax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pay-Baymax.release.xcconfig"; path = "Target Support Files/Pods-Pay-Baymax/Pods-Pay-Baymax.release.xcconfig"; sourceTree = "<group>"; };
 		49E329474B1CC799F24D275B /* Pods-Pay-Baymax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pay-Baymax.debug.xcconfig"; path = "Target Support Files/Pods-Pay-Baymax/Pods-Pay-Baymax.debug.xcconfig"; sourceTree = "<group>"; };
 		6739A989D24B8987F80C39E5 /* Pods_Pay_Baymax.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pay_Baymax.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C21BEBC250A6EF000C978B4 /* UIViewController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
+		8C21BEBE250B081500C978B4 /* usd.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = usd.json; sourceTree = "<group>"; };
+		8C21BEC0250B084300C978B4 /* bdt.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bdt.json; sourceTree = "<group>"; };
+		8C21BEC2250B085300C978B4 /* jpy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jpy.json; sourceTree = "<group>"; };
 		8CA2A8092507D79C00FDAEBB /* Pay-Baymax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pay-Baymax.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA2A80C2507D79C00FDAEBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CA2A8102507D79C00FDAEBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +195,9 @@
 				8CA2A8152507D79E00FDAEBB /* Assets.xcassets */,
 				8CA2A8172507D79E00FDAEBB /* LaunchScreen.storyboard */,
 				8CA2A81A2507D79E00FDAEBB /* Info.plist */,
+				8C21BEBE250B081500C978B4 /* usd.json */,
+				8C21BEC0250B084300C978B4 /* bdt.json */,
+				8C21BEC2250B085300C978B4 /* jpy.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -228,6 +239,7 @@
 			children = (
 				8CD3C1172507EBEE00B0650B /* Ext.swift */,
 				8CD3C11B2508693100B0650B /* Convertible.swift */,
+				8C21BEBC250A6EF000C978B4 /* UIViewController+Ex.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -337,6 +349,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CD3C1252508B7F600B0650B /* CurrencyInfoCell.xib in Resources */,
+				8C21BEBF250B081500C978B4 /* usd.json in Resources */,
+				8C21BEC3250B085300C978B4 /* jpy.json in Resources */,
+				8C21BEC1250B084300C978B4 /* bdt.json in Resources */,
 				8CA2A8192507D79E00FDAEBB /* LaunchScreen.storyboard in Resources */,
 				8CD3C0FA2507DC4000B0650B /* Default-568h@2x.png in Resources */,
 				8CD3C1062507DF7800B0650B /* PayHome.storyboard in Resources */,
@@ -424,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CD3C1132507E76600B0650B /* Currency.swift in Sources */,
+				8C21BEBD250A6EF000C978B4 /* UIViewController+Ex.swift in Sources */,
 				8CD3C1082507DF7800B0650B /* PayHomeViewModel.swift in Sources */,
 				8CD3C1012507DE1800B0650B /* Application.swift in Sources */,
 				8CD3C10A2507E02C00B0650B /* Navigator.swift in Sources */,

@@ -80,7 +80,7 @@ extension Currrency: RealmRepresentable {
         return currencyCode ?? ""
     }
 
-    func asRealm() -> some RMCurrrency {
+    func asRealm() -> RMCurrrency {
         return RMCurrrency.build{ object in
             object.countryName = countryName
             object.currencyCode = currencyCode

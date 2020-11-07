@@ -59,6 +59,7 @@
 		8C21BEBE250B081500C978B4 /* usd.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = usd.json; sourceTree = "<group>"; };
 		8C21BEC0250B084300C978B4 /* bdt.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bdt.json; sourceTree = "<group>"; };
 		8C21BEC2250B085300C978B4 /* jpy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jpy.json; sourceTree = "<group>"; };
+		8C21BEC4250B234000C978B4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8CA2A8092507D79C00FDAEBB /* Pay-Baymax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pay-Baymax.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA2A80C2507D79C00FDAEBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CA2A8102507D79C00FDAEBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		8CA2A8002507D79B00FDAEBB = {
 			isa = PBXGroup;
 			children = (
+				8C21BEC4250B234000C978B4 /* README.md */,
 				8CD3C0F92507DC3F00B0650B /* Default-568h@2x.png */,
 				8CA2A80B2507D79C00FDAEBB /* Pay-Baymax */,
 				8CA2A8222507D79F00FDAEBB /* Pay-BaymaxTests */,
@@ -621,7 +623,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZW6M86YW35;
 				INFOPLIST_FILE = "Pay-Baymax/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -641,7 +643,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZW6M86YW35;
 				INFOPLIST_FILE = "Pay-Baymax/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -662,7 +664,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZW6M86YW35;
 				INFOPLIST_FILE = "Pay-BaymaxTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -685,7 +687,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZW6M86YW35;
 				INFOPLIST_FILE = "Pay-BaymaxTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

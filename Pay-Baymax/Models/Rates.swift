@@ -58,7 +58,7 @@ extension RateList: RealmRepresentable {
         return source
     }
 
-    func asRealm() -> some RMRateList {
+    func asRealm() -> RMRateList {
         return RMRate.build{ object in
             object.id = source
             object.privacy = privacy
@@ -138,7 +138,7 @@ extension Rate: RealmRepresentable {
         return target ?? ""
     }
 
-    func asRealm() -> some RMRate {
+    func asRealm() -> RMRate {
         return RMRate.build{ object in
             object.source = source
             object.target = target

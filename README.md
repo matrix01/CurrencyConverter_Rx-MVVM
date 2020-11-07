@@ -1,4 +1,5 @@
-# Pay-Baymax
+# Currency converter
+###Sameple project to demonstrate clean architechture with RxSwift.
 
 This project only demostrate fetching live data from currencylayer.com using 2 api.
 1. https://api.currencylayer.com/live

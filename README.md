@@ -19,4 +19,8 @@ To collect recent currency rates and list of available currencies
 1. Project was done in XCODE 11.6, also tested in 11.3.1 (Please update if the xcode version is lower than this)
 2. iOS device//Simulator 12.0 is selected as min version as it wasn't mentioned
 
+### Git Emoji
+1. I am using gitmoji cli for commiting message with emoji
+
+
 ## Thank you and happy coding
